@@ -19,6 +19,8 @@ Mail   : baejeu@naver.com
 
  ## ▶ Reference data
  ➡ https://velog.io/@alicesykim95/Thymeleaf 코딩하는 포로리
+ 
+ ➡ https://simpleicons.org/?q=Thy README Simple Icons
 
  ## Thymeleaf(타임리프)?
 
