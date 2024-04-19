@@ -1,6 +1,7 @@
 
 # Thymeleaf
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)](https://github.com/)
+[![thymeleaf](https://img.shields.io/badge/-thymeleaf-#005F0F?style=flat-square&logo=thymeleaf&logoColor=white)](https://github.com/)
 
 ## 뷰 템플릿 엔진 타임리프 공부용 레포지토리 
 
