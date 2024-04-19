@@ -1,4 +1,7 @@
-## #005F0F 뷰 템플릿 엔진 타임리프 공부용 레포지토리 
+
+<img src="https://img.shields.io/badge/thymeleaf-#005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
+
+## 뷰 템플릿 엔진 타임리프 공부용 레포지토리 
 
 작성자 : 배제우 
 
