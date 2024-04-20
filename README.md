@@ -70,11 +70,13 @@ Maven은 pom.xml에, Gradle은 build.gradle에 타임리프의 dependency를 추
 implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 ```
 
-2) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가
+2) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가 
+
+<html xmlns:th="http://www.thymeleaf.org">
 
 ```HTML
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
