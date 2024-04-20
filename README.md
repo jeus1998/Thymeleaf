@@ -72,8 +72,6 @@ implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
 2) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가 
 
-<html xmlns:th="http://www.thymeleaf.org">
-
 ```HTML
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -86,8 +84,17 @@ implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 </body>
 </html>
 ```
+## 설명 
+
+스프링 MVC 공부를 위해서가 아니라 순수하게 타임리프 공부를 위해서 최소한의 MVC 구성만 해두었다.
+
+Controller -> Thymeleaf.study.MyController.java
+
+
+
 
 ## Thymeleaf 문법 정리 
+
 
 
   
