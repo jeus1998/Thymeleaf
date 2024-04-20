@@ -75,11 +75,11 @@ implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 ```java
 # Thymeleaf 사용
 spring.thymeleaf.enabled=true
-# cache 사용 /사용 시 컴파일한 파일만 사용 (개발 시 미사용)
+# cache 사용 /사용 시 컴파일한 파일만 사용 
 spring.thymeleaf.cache=false
-# 템플릿 위치 / View 파일 위치
+# 템플릿 위치 / View 파일 위치 
 spring.thymeleaf.prefix=classpath:templates/
-# View 파일 기본 확장자 / Controller에서 확장자를 입력하지 않아도 된다.
+# View 파일 기본 확장자
 spring.thymeleaf.suffix=.html
 ```   
 3) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가 
