@@ -17,7 +17,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>아이템 상세 정보(링크)</th>
+                <!--<th>아이템 상세 정보(링크)</th> -->
             </tr>
         </thead>
         <!-- 테이블 본문을 정의하는 태그 -->
@@ -25,12 +25,13 @@
             <!-- 타임리프 반복분 th:each="item : ${items}" -->
             <tr th:each="item : ${items}">
                 <!-- <td> 각 행의 열에 해당하는 데이터를 정의 -->
-                <td th:text="${item.id}"></td>
+                <td><a th:href="@{/items/{id}(id=${item.id})}" th:text="${item.id}">View Detail</a></td>
                 <td th:text="${item.itemName}"></td>
+                <td><a th:href="@{items/{id}(id=${item.id})}" th:text="${item.itemName}">item name</a></td>
                 <td th:text="${item.price}"></td>
                 <!-- <a> HTML 하이퍼링크를 생성하는데 사용 -->
                 <!-- th:href 타임리프 링크생성 표현식 -->
-                <td><a th:href="@{/items/{id}(id=${item.id})}">View Detail</a></td>
+                <!-- <td><a th:href="@{/items/{id}(id=${item.id})}" th:text="${item.id}">View Detail</a></td> -->
             </tr>
         </tbody>
     </table>
