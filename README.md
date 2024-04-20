@@ -151,19 +151,23 @@ Controller -> Thymeleaf.study.MyController.java
 
 
 💡 문법: th:utext="${}"
+
 ```HTML
 <div>
     <h1 th:utext="${data}"></h1>
 </div>
 ```
 ⭐️ 설명
+
 - th:text와 동일하게 텍스트를 반환하지만, HTML 태그를 사용 가능하게 해준다
 - 출력
+- 
 ```HTML
 Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
 ```
 
 💡 문법: th:src="${}"
+
 ```HTML
 <img class="img" th:src="${dataList.IMG_URL}">
 ```
@@ -184,6 +188,7 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 <a th:href="@{/items/{id}(id=${item.id})}">View Detail</a>
 ```
 ⭐️ 설명
+
 a 태그는 HTML 태그로 하이퍼링크를 생성하는데 사용 
 th:href="@{....} : 타임리프 링크생성 표현식 
 
