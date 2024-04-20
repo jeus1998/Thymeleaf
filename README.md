@@ -49,7 +49,7 @@ Mail   : baejeu@naver.com
 6. 템플릿 캐싱: 타임리프는 템플릿 캐싱을 지원하여 효율적인 성능을 제공합니다. 이를 통해 반복적으로 사용되는 템플릿을 미리 컴파일하고 캐시하여 속도를 향상시킵니다.
    그래서 초기 페이지 로딩 속도가 빠르다.
 
-## 🛠️ Thymeleaf 설정 
+## Thymeleaf 설정 🛠️ 
 
 1) 의존성 추가
 
@@ -67,4 +67,19 @@ Maven은 pom.xml에, Gradle은 build.gradle에 타임리프의 dependency를 추
 implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 ```
 
+2) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가
+
+```HTML
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${name}">Name</h1>
+</body>
+</html>
+```
+  
  
