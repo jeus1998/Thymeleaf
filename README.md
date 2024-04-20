@@ -1,5 +1,5 @@
 
-# Thymeleaf
+# Thymeleaf (SSR)
 
 ![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-005F0F?style=flat-square&logo=Thymeleaf&logoColor=white)
 
@@ -123,7 +123,7 @@ spring.thymeleaf.suffix=.html
 ```
 타임리프 프로토타입은 약간 특이한데, HTML 주석에 약간의 구문을 더했다. HTML 파일을 웹 브라우저에서 그대로 열어보면 <!-- -->을 포함하는 HTML 주석이기 때문에 이 부분이 웹 브라우저가 렌더링하지 않는다. 타임리프 렌더링을 거치면 이 부분이 정상 렌더링 된다. HTML 파일을 그대로 열어보면 주석처리가 되지만, 타임리프를 통해 렌더링 한 경우에만 출력된다.
 
-### 📌 text 정리
+### 📌 변수 표현식 - text 
 
 
 💡 문법: th:text="${}"
@@ -205,7 +205,36 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 
 생성된 링크: http://localhost:8080/basic/items/1?query=test
 
+### 📌 반복문 each
+
+```html
+<tr th:each="item : ${items}">
+<!-- <td> 각 행의 열에 해당하는 데이터를 정의 -->
+<td th:text="${item.id}"></td>
+<td th:text="${item.itemName}"></td>
+<td th:text="${item.price}"></td>
+</tr>
+```
+
+### 📌 switch case
+
+```html
+<div th:switch="${userType}">
+    <p th:case="'admin'">관리자 페이지에 오신 것을 환영합니다.</p>
+    <p th:case="'user'">사용자 페이지에 오신 것을 환영합니다.</p>
+    <p th:case="'guest'">게스트 페이지에 오신 것을 환영합니다.</p>
+    <p th:case="*">알 수 없는 사용자입니다.</p>
+</div>
+```
 
 ### 📌 리터럴 
 
+- 타임리프에서 문자와 표현식 등은 분리되어 있기 때문에 더해서 사용해야 된다.
+
+```html
+    <!-- 사용전 -->
+        <span th:text="'Welcome to our application, ' + ${item.id} + '!'"> </span>
+    <!-- 사용후 -->
+        <span th:text="|Welcome to our application, ${item.id}!|"> </span>
+```
   
