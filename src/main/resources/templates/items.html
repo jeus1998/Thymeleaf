@@ -5,7 +5,34 @@
     <title>상품 목록</title>
 </head>
 <body>
-
-
+    <!-- <h1> 태그는 제목1을 태그 -->
+    <h1>Item List</h1>
+    <!-- <table> 태그 테이블 정의 태그 -->
+    <table>
+        <!-- <thead> 표의 헤더(제목) 정의하는 태그 -->
+        <thead>
+            <!-- <tr> 행을 나타내는 태그 -->
+            <tr>
+                <!-- <th> 열 제목을 정의하는 태그 -->
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>아이템 상세 정보(링크)</th>
+            </tr>
+        </thead>
+        <!-- 테이블 본문을 정의하는 태그 -->
+        <tbody>
+            <!-- 타임리프 반복분 th:each="item : ${items}" -->
+            <tr th:each="item : ${items}">
+                <!-- <td> 각 행의 열에 해당하는 데이터를 정의 -->
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.itemName}"></td>
+                <td th:text="${item.price}"></td>
+                <!-- <a> HTML 하이퍼링크를 생성하는데 사용 -->
+                <!-- th:href 타임리프 링크생성 표현식 -->
+                <td><a th:href="@{/items/{id}(id=${item.id})}">View Detail</a></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

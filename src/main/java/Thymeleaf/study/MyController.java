@@ -33,16 +33,15 @@ public class MyController {
         itemRepository.save("itemB", 20000);
         itemRepository.save("itemC", 5000);
     }
-
     @GetMapping
     public String items(Model model){
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
         return "/items";
     }
-    @GetMapping("/{userId}")
-    public String item(Model model, @PathVariable("userId") int userId){
-        Item item = itemRepository.findById(userId);
+    @GetMapping("/{itemId}")
+    public String item(Model model, @PathVariable("itemId") int itemId){
+        Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
         return "/item";
     }
