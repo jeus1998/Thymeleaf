@@ -98,17 +98,9 @@ spring.thymeleaf.suffix=.html
 </html>
 ```
 
-## 설명 
-
-스프링 MVC 공부를 위해서가 아니라 순수하게 타임리프 공부를 위해서 최소한의 MVC 구성만 해두었다.
-
-Controller -> Thymeleaf.study.MyController.java
-
-
-
 ## Thymeleaf 문법 정리 
 
-### 💡 주석 정리
+### 📌 주석
 
 1 클라이언트에게 랜더링 되지 않는 주석 (타임리프 엔진이 템플릿을 처리할 때 무시)
 
@@ -130,9 +122,7 @@ Controller -> Thymeleaf.study.MyController.java
 ```
 타임리프 프로토타입은 약간 특이한데, HTML 주석에 약간의 구문을 더했다. HTML 파일을 웹 브라우저에서 그대로 열어보면 <!-- -->을 포함하는 HTML 주석이기 때문에 이 부분이 웹 브라우저가 렌더링하지 않는다. 타임리프 렌더링을 거치면 이 부분이 정상 렌더링 된다. HTML 파일을 그대로 열어보면 주석처리가 되지만, 타임리프를 통해 렌더링 한 경우에만 출력된다.
 
-주석 테스트를 할 수 있다.
-localhost:8080/basic        : 모델에 데이터 추가 x
-localhost:8080/basic/text   : 모델에 데이터 o 
+### 📌 text 정리
 
 💡 문법: th:text="${}"
 ```HTML
@@ -155,29 +145,63 @@ localhost:8080/basic/text   : 모델에 데이터 o
 
 
 💡 문법: th:utext="${}"
+
 ```HTML
 <div>
     <h1 th:utext="${data}"></h1>
 </div>
 ```
 ⭐️ 설명
+
 - th:text와 동일하게 텍스트를 반환하지만, HTML 태그를 사용 가능하게 해준다
 - 출력
+- 
 ```HTML
 Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
 ```
 
+### 📌 이미지
 
 💡 문법: th:src="${}"
+
 ```HTML
 <img class="img" th:src="${dataList.IMG_URL}">
 ```
 ⭐️ 설명
 - 이미지 src 사용시
 
-
+### 📌 하이퍼 링크
 
 💡 문법: URL 링크 표현식 
+
+URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포함한다.
+
+서블릿 컨텍스트?
+
+웹 애플리케이션 환경을 나타내는 객체(서블릿 컨테이너:Apache, Tomcat) 에서 관리, 애플리케이션 전체에서 공유되는 정보 
+
+@{...}
+
+```html
+<a th:href="@{/items/{id}(id=${item.id})}">View Detail</a>
+```
+⭐️ 설명
+
++ a 태그는 HTML 태그로 하이퍼링크를 생성하는데 사용 
++ th:href="@{....} : 타임리프 링크생성 표현식 
+
++ PathVariable 넣기 
++ {id}(id=${item.id}) 이런식으로 하면 item.id가 PathVariable로 넘어가진다.
+
++ QueryString, 쿼리 파라미터 넣기
+
+```html
+ th:href="@{/basic/items/{itemId}(itemId=${item.id}, query='test')}"
+```
+
+생성된 링크: http://localhost:8080/basic/items/1?query=test
+
+
 
 
   
