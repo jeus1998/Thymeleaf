@@ -84,5 +84,9 @@ implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 </body>
 </html>
 ```
+
+## Thymeleaf 문법 정리 
+
+
   
  
