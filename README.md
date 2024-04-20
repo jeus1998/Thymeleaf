@@ -131,7 +131,9 @@ Controller -> Thymeleaf.study.MyController.java
 타임리프 프로토타입은 약간 특이한데, HTML 주석에 약간의 구문을 더했다. HTML 파일을 웹 브라우저에서 그대로 열어보면 <!-- -->을 포함하는 HTML 주석이기 때문에 이 부분이 웹 브라우저가 렌더링하지 않는다. 타임리프 렌더링을 거치면 이 부분이 정상 렌더링 된다. HTML 파일을 그대로 열어보면 주석처리가 되지만, 타임리프를 통해 렌더링 한 경우에만 출력된다.
 
 주석 테스트를 할 수 있다.
+
 localhost:8080/basic        : 모델에 데이터 추가 x
+
 localhost:8080/basic/text   : 모델에 데이터 o 
 
 💡 문법: th:text="${}"
