@@ -6,12 +6,19 @@
 </head>
 <body>
 <a href="basic/text">정적 리소스 -> 동적 리소스</a>
+
 <!-- 기본 html 주석 -->
 <!--
 여러 줄 주석
 -->
-<!--/*/ <span th:text="${data}">타임리프 프로토 타입 랜더링 한 경우에만 출력</span> /*/-->
+<!--/*/ <span th:text="${data}">타임리프 프로토 타입 랜더링 한 경우에만 출력 </span> /*/-->
+<br>
 
+<!-- th:text 공부 -->
+<div>
+    <h1 th:text ="${data}">model have no data </h1>
+</div>
+<!-- th:utext 는 model 안에 있는 HTML 태그를 사용 가능하게 해준다.-->
 
 
 </body>
