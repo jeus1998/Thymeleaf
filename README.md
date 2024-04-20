@@ -235,7 +235,7 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 
 ```html
     <!-- 사용전 -->
-        <span th:text="'Welcome to our application, ' + ${item.id} + '!'"> </span>
+        <span th:text="'Welcome to our application, ' + ${item.id} + '!'"> </span> <br>
     <!-- 사용후 -->
         <span th:text="|Welcome to our application, ${item.id}!|"> </span>
 ```
