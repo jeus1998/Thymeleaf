@@ -26,7 +26,8 @@ Mail   : baejeu@naver.com
  ➡ 코딩하는 포로리 https://velog.io/@alicesykim95/Thymeleaf 
  
  ➡ README Simple Icons https://simpleicons.org/?q=Thy 
-
+ 
+ ➡ makeaplayground https://makeaplayground.tistory.com/187
  
  ## Thymeleaf(타임리프)?
 
@@ -105,10 +106,18 @@ Controller -> Thymeleaf.study.MyController.java
 
 
 
-
 ## Thymeleaf 문법 정리 
 
-
+💡 문법: th:text="${}"
+```HTML
+<div>
+    <h1 th:text="${data}"></h1>
+</div>
+```
+⭐️ 설명
+- 일반 텍스트를 반환할 때 사용
+- HTML 태그 또한 String 값으로 변환 -> 출력: Hello Spring    ( model.addAttribute("data", "Hello <b>Spring</b>!"); )
+- 
 
   
  
