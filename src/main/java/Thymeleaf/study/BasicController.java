@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/basic")
 public class BasicController {
     /**
-     * GET /basic 아무 데이터 렌더링x 정적 리소스
-     * GET /basic/text 데이터 랜더링 이후 리소스
+     * 둘다 타임리프를 통해 랜더링 되지만 모델에 데이터 유무의 차이
+     * GET /basic       model data x
+     * GET /basic/text  model data o
      */
     @GetMapping
     public String before(){
