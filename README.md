@@ -11,6 +11,7 @@
 Mail   : baejeu@naver.com
 
 ## ▶ Environment 
+
 > Language : Java 17
 
 > IDE : Intellij
@@ -49,5 +50,21 @@ Mail   : baejeu@naver.com
    그래서 초기 페이지 로딩 속도가 빠르다.
 
 ## 🛠️ Thymeleaf 설정 
+
+1) 의존성 추가
+
+Maven은 pom.xml에, Gradle은 build.gradle에 타임리프의 dependency를 추가해준다.
+
+👉 Maven
+```xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+👉 Gradle
+```java
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+```
 
  
