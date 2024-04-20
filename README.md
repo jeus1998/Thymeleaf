@@ -119,7 +119,7 @@ Controller -> Thymeleaf.study.MyController.java
 ```java
 - [컨트롤러] model.addAttribute("data", "Hello <b>Spring</b>!");
 ```
-- HTML 태그 또한 String 값으로 변환 => 출력: Hello Spring  
+- HTML 태그 또한 String 값으로 변환 => 출력: Hello Spring
 
 
 💡 문법: th:utext="${}"
@@ -135,4 +135,21 @@ Controller -> Thymeleaf.study.MyController.java
 Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
 ```
 
- 
+💡 문법: th:src="${}"
+```HTML
+<img class="img" th:src="${dataList.IMG_URL}">
+```
+⭐️ 설명
+- 이미지 src 사용시
+
+
+ 💡 문법: th:href="@{}", th:href="||"
+ ```HTML
+ <body>
+  <a th:hrf="@{/mypage}"></a> // 파라미터 없는 경우
+  <a th:hrf="@{/mypage?userNum={num}}"></a> // 파라미터 넘길경우
+  <a href="@{/user/profile(param=${param})}"></a> // 파라미터 넘길경우
+  <a href="@{user/product/{param1}(param2=A, param3=B)}"></a> // 파라미터 여러개 넘길경우
+  <a th:href="|/mypage?userNum=${num}|"><</a> // 이것도 가능
+</body>
+ ```
