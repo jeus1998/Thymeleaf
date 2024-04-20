@@ -116,8 +116,18 @@ Controller -> Thymeleaf.study.MyController.java
 ```
 ⭐️ 설명
 - 일반 텍스트를 반환할 때 사용
-- HTML 태그 또한 String 값으로 변환 -> 출력: Hello Spring    ( model.addAttribute("data", "Hello <b>Spring</b>!"); )
-- 
+- [컨트롤러] model.addAttribute("data", "Hello <b>Spring</b>!"); 
+- HTML 태그 또한 String 값으로 변환 => 출력: Hello Spring  
 
-  
+
+💡 문법: th:utext="${}"
+```HTML
+<div>
+    <h1 th:utext="${data}"></h1>
+</div>
+```
+⭐️ 설명
+- th:text와 동일하게 텍스트를 반환하지만, HTML 태그를 사용 가능하게 해준다
+- => 출력: Hello <b>Spring<b>
+
  
