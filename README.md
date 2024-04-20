@@ -128,6 +128,9 @@ Controller -> Thymeleaf.study.MyController.java
 ```
 ⭐️ 설명
 - th:text와 동일하게 텍스트를 반환하지만, HTML 태그를 사용 가능하게 해준다
-- => 출력: "Hello <b>Spring</b>!" <b> 태그 적용 
+- 출력
+  ```HTML
+  Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
+  ```
 
  
