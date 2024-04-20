@@ -70,7 +70,19 @@ Maven은 pom.xml에, Gradle은 build.gradle에 타임리프의 dependency를 추
 implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 ```
 
-2) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가 
+2) application.properties 여러 설정
+   
+```java
+# Thymeleaf 사용
+spring.thymeleaf.enabled=true
+# cache 사용 /사용 시 컴파일한 파일만 사용 (개발 시 미사용)
+spring.thymeleaf.cache=false
+# 템플릿 위치 / View 파일 위치
+spring.thymeleaf.prefix=classpath:templates/
+# View 파일 기본 확장자 / Controller에서 확장자를 입력하지 않아도 된다.
+spring.thymeleaf.suffix=.html
+```   
+3) 타임리프를 적용하는 HTML 문서에 네임스페이스 추가 
 
 ```HTML
 <!DOCTYPE html>
@@ -84,6 +96,7 @@ implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 </body>
 </html>
 ```
+
 ## 설명 
 
 스프링 MVC 공부를 위해서가 아니라 순수하게 타임리프 공부를 위해서 최소한의 MVC 구성만 해두었다.
