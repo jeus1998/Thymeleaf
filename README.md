@@ -17,22 +17,34 @@ Mail   : baejeu@naver.com
 
 > Framework : SpringBoot (3.2.5)
 
+ 
  ## ▶ Reference data
  ➡ https://velog.io/@alicesykim95/Thymeleaf 코딩하는 포로리
  
  ➡ https://simpleicons.org/?q=Thy README Simple Icons
 
+ 
  ## Thymeleaf(타임리프)?
 
  타임리프는 View Templete Engine 으로 JSP, Freemarkerd, Velocity 와 같이 SSR(Server Side Rendering) 이다. 
  
  즉 서버에서 클라이언트에게 동적으로 응답할 브라우저 화면을 만들어주는 역할을 한다.
 
-## Thymeleaf 장점 
 
+## Thymeleaf 장점 
 1. 자연스러운 문법 : 타임리프는 자연스러운 문법을 제공하여 HTML 파일을 쉽게 통합할 수 있습니다. 이로 인해 개발자들은 빠르게 템플릿을 작성하고 유지보수할 수 있다.
+
 2. 통합 용이성 : Spring 에서도 Spring Boot와 Thymeleaf를 함께 사용하는 것을 권장한다. JSP 사용 시 호환 및 환경설정에 어려움이 많다.
    반대로 타임리프는 간편하게 Depedency 추가 작업으로 사용할 수 있다.
-3. 
+
+3. View 집중 : JSP와 달리 Servlet Code로 변환되지 않기 때문에 비즈니스 로직과 분리되어 View에 집중할 수 있다.
+
+4. 사용자 편의 : 서버상에서 동작하지 않아도 되기 때문에 서버 동작 없이 화면을 확인할 수 있다. 때문에 더미 데이터를 넣고 화면 디자인 밑 테스트에 용이하다.
+
+5. 최종 사용자 친화적 : 타임리프는 최종 사용자가 이해하기 쉬운 템플릿을 생성할 수 있습니다. 템플릿에 태그를 추가하거나 속성을 변경하여 최종 출력물을 조작할 수 있으며, 이는 디자이너와 협업할 때 유용합니 
+   다.
+
+6. 템플릿 캐싱: 타임리프는 템플릿 캐싱을 지원하여 효율적인 성능을 제공합니다. 이를 통해 반복적으로 사용되는 템플릿을 미리 컴파일하고 캐시하여 속도를 향상시킵니다.
+   그래서 초기 페이지 로딩 속도가 빠르다.
 
  
