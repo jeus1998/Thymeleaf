@@ -22,5 +22,18 @@
             </tr>
         </tbody>
     </table>
+    <!-- span 태그 1.스타일링 2. js를 통한 특정 요소를 선택하고 조작할 때 사용(id나 클래스를 할당)-->
+    <!-- 스타일링 적용하기 -->
+    <p> Test <span style="font-weight: bold; color: blue;">Code</span>kk</p>
+
+    <!-- 리터럴 타임리프에서는 문자와 표현식이 분리되엉 있기 때문에 더해서 사용해야 한다. -> 리터럴 사용 -->
+    <!-- |...| 이렇게 사용한다. -->
+    <!-- 사용전 -->
+        <span th:text="'Welcome to our application, ' + ${item.id} + '!'"> </span> <br>
+    <!-- 사용후 -->
+        <span th:text="|Welcome to our application, ${item.id}!|"> </span>
+
+
+
 </body>
 </html>
