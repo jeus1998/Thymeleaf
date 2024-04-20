@@ -193,7 +193,7 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 + th:href="@{....} : 타임리프 링크생성 표현식 
 
 + PathVariable 넣기 
-++{id}(id=${item.id}) 이런식으로 하면 item.id가 PathVariable로 넘어가진다.
++ {id}(id=${item.id}) 이런식으로 하면 item.id가 PathVariable로 넘어가진다.
 
 + QueryString, 쿼리 파라미터 넣기
 
