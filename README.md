@@ -108,7 +108,7 @@ Controller -> Thymeleaf.study.MyController.java
 
 ## Thymeleaf 문법 정리 
 
-### 💡 주석 정리
+### 📌 주석 정리
 
 1 클라이언트에게 랜더링 되지 않는 주석 (타임리프 엔진이 템플릿을 처리할 때 무시)
 
@@ -129,6 +129,8 @@ Controller -> Thymeleaf.study.MyController.java
 <!--/*/ <span>표준 HTML 주석</span> /*/-->
 ```
 타임리프 프로토타입은 약간 특이한데, HTML 주석에 약간의 구문을 더했다. HTML 파일을 웹 브라우저에서 그대로 열어보면 <!-- -->을 포함하는 HTML 주석이기 때문에 이 부분이 웹 브라우저가 렌더링하지 않는다. 타임리프 렌더링을 거치면 이 부분이 정상 렌더링 된다. HTML 파일을 그대로 열어보면 주석처리가 되지만, 타임리프를 통해 렌더링 한 경우에만 출력된다.
+
+### 📌 text 정리
 
 💡 문법: th:text="${}"
 ```HTML
@@ -166,6 +168,8 @@ Controller -> Thymeleaf.study.MyController.java
 Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
 ```
 
+### 📌 이미지
+
 💡 문법: th:src="${}"
 
 ```HTML
@@ -173,6 +177,8 @@ Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다
 ```
 ⭐️ 설명
 - 이미지 src 사용시
+
+### 📌 하이퍼 링크
 
 💡 문법: URL 링크 표현식 
 
