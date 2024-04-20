@@ -142,9 +142,6 @@ Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다
 ```
 
 
-
-
-
 💡 문법: th:src="${}"
 ```HTML
 <img class="img" th:src="${dataList.IMG_URL}">
@@ -153,13 +150,8 @@ Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다
 - 이미지 src 사용시
 
 
- 💡 문법: th:href="@{}", th:href="||"
- ```HTML
- <body>
-  <a th:hrf="@{/mypage}"></a> // 파라미터 없는 경우
-  <a th:hrf="@{/mypage?userNum={num}}"></a> // 파라미터 넘길경우
-  <a href="@{/user/profile(param=${param})}"></a> // 파라미터 넘길경우
-  <a href="@{user/product/{param1}(param2=A, param3=B)}"></a> // 파라미터 여러개 넘길경우
-  <a th:href="|/mypage?userNum=${num}|"><</a> // 이것도 가능
-</body>
- ```
+
+💡 문법: URL 링크 표현식 
+
+
+  
