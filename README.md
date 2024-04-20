@@ -121,6 +121,12 @@ Controller -> Thymeleaf.study.MyController.java
 ```
 - HTML 태그 또한 String 값으로 변환 => 출력: Hello Spring
 
+```HTML
+<td th:text="${item.price}">10000</td>
+```
+- 내용의 값을 th:text 의 값으로 변경한다.
+- 여기서는 10000을 ${item.price} 의 값으로 변경한다.
+
 
 💡 문법: th:utext="${}"
 ```HTML
@@ -134,6 +140,10 @@ Controller -> Thymeleaf.study.MyController.java
 ```HTML
 Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
 ```
+
+
+
+
 
 💡 문법: th:src="${}"
 ```HTML
