@@ -339,7 +339,7 @@ span : 텍스트의 일부를 그룹화하거나 스타일을 적용하기 위�
 ```java
 - [컨트롤러] model.addAttribute("data", "Hello <b>Spring</b>!");
 ```
-- HTML 태그 또한 String 값으로 변환 => 출력: Hello <b>Spring</b>
+- HTML 태그 또한 String 값으로 변환 => 출력: Hello &lt;b&gt;Spring&lt;/b&gt;
 
 ```HTML
 <td th:text="${item.price}">10000</td>
