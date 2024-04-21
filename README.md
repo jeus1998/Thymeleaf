@@ -282,6 +282,24 @@ ul, ol, li : HTML에서 목록을 정의하는 데 사용되는 태그들입니�
 
 span : 텍스트의 일부를 그룹화하거나 스타일을 적용하기 위해 사용됩니다.
 
+### 📌 b 태그
+
+```html
+<p>This is <b>bold</b> text.</p>
+```
+- b 태그는 텍스트를 굵게(bold)표시할 때 사용됩니다.
+- 의미적인 중요성을 갖지 않고, 시각적으로 텍스트를 강조하고자 할 때 주로 사용됩니다.
+- 위 예제에서는 "bold"라는 단어가 굵게 표시됩니다.
+
+### 📌 br 태그
+
+```html
+<p>This is the first line.<br>This is the second line.</p>
+```
+- br 태그는 줄 바꿈(line break)을 나타냅니다.
+- 새로운 줄로 텍스트를 이동시키기 위해 사용됩니다.
+- 위 예제에서는 "This is the first line" 다음 새로운 줄에 "This is the second line"이 시작됩니다
+
 
 ## Thymeleaf 문법 정리 
 
@@ -321,7 +339,7 @@ span : 텍스트의 일부를 그룹화하거나 스타일을 적용하기 위�
 ```java
 - [컨트롤러] model.addAttribute("data", "Hello <b>Spring</b>!");
 ```
-- HTML 태그 또한 String 값으로 변환 => 출력: Hello Spring
+- HTML 태그 또한 String 값으로 변환 => 출력: Hello <b>Spring</b>
 
 ```HTML
 <td th:text="${item.price}">10000</td>
@@ -342,10 +360,12 @@ span : 텍스트의 일부를 그룹화하거나 스타일을 적용하기 위�
 ```
 ⭐️ 설명
 
-```HTML
-Hello <b>Spring</b>! <b> 태그를 포함 그대로 출력 한다 
+```java
+- [컨트롤러] model.addAttribute("data", "Hello <b>Spring</b>!");
 ```
 - th:text와 동일하게 텍스트를 반환하지만, HTML 태그를 사용 가능하게 해준다
+- 출력: Hello Spring!
+- "Spring" 이 b 태그로 단어가 굵게 표시된다.
 
 
 ### 📌 이미지
