@@ -161,6 +161,21 @@ Default: (value) ? : (defaultvalue)
 
 No-Operation: _
 
+## HTML Entity & Escape vs Unescape 개념 
+
+- 개념 : 웹 브라우저는 < 를 HTML 태그로 인식한다. 따라서 < 를 태그의 시작이 아니라 문자로 표현하는 방법이 필요한데 이것을 HTML 엔티티라 한다.
+- escape : HTML에서 사용하는 특수 문자를 HTML Entity로 변경하는 것 
+- unescape : escape 반대 (그대로 태그로 사용)
+
+### 📌 주로 사용되는 이스케이프된 문자들 
+
+- <를 &lt;로 이스케이프
+- >를 &gt;로 이스케이프
+- &를 &amp;로 이스케이프
+- "를 &quot;로 이스케이프
+- '를 &#39;로 이스케이프
+
+
 ## HTML 태그 정리
 
 ### 📌 html 태그
