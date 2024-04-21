@@ -99,7 +99,7 @@ spring.thymeleaf.suffix=.html
 </body>
 </html>
 ```
-## basic expression
+## Thymeleaf basic expression (기본 표현식)
 
 ### 📌 간단한 표현
 
@@ -163,7 +163,7 @@ No-Operation: _
 
 ## HTML 태그 정리
 
-### 📌 head 태그
+### 📌 html 태그
 
 ```HTML
 <!DOCTYPE html>
@@ -176,11 +176,28 @@ No-Operation: _
 </body>
 </html>
 ```
-head : HTML 문서의 시작과 끝을 나타내는 태그입니다.
+html : HTML 문서의 시작과 끝을 나타내는 태그입니다.
+
+### 📌 head 태그
+
+```html
+<head>
+    <title>문서 제목</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+```
+head : 문서의 메타데이터를 포함하는 부분을 정의합니다.
+
+### 📌 title 태그
+
+```html
+<title>나의 웹 페이지</title>
+```
+title : 문서의 제목을 정의합니다
 
 
 ## Thymeleaf 문법 정리 
-
 
 ### 📌 주석
 
