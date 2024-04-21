@@ -364,7 +364,7 @@ span : 텍스트의 일부를 그룹화하거나 스타일을 적용하기 위�
 - [컨트롤러] model.addAttribute("data", "Hello <b>Spring</b>!");
 ```
 - th:text와 동일하게 텍스트를 반환하지만, HTML 태그를 사용 가능하게 해준다
-- 출력: Hello Spring!
+- 출력: Hello <b>Spring</b>!
 - "Spring" 이 b 태그로 단어가 굵게 표시된다.
 
 
