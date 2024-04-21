@@ -29,7 +29,7 @@ Mail   : baejeu@naver.com
  
  ➡ makeaplayground https://makeaplayground.tistory.com/187
   
- ➡ 인프런 김영한 강사님 스프링 MVC PDF
+ ➡ 인프런 김영한 강사님 스프링 MVC 강의 https://www.inflearn.com/roadmaps/373
  
  ## Thymeleaf(타임리프)?
 
@@ -448,7 +448,22 @@ public class BookController {
 </ul>
 ```
 
-- 모두 자바 프로퍼티 getXxx를 사용하고 ['변수이름'], getXxx, .변수이름 다양한 메서드를 지원한다. 
+- 모두 자바 프로퍼티 getXxx를 사용하고 ['변수이름'], getXxx, .변수이름 다양한 메서드를 지원한다.
+
+### 📌 지역 변수 
+
+💡 문법: th:with
+
+```html
+<h2>지역변수 th:with</h2>   <!-- scope는 <div> scope </div> -->
+<div th:with="first=${books[0]}">
+    <p>첫 번째 책 이름은? <span th:text="${first.name}"></span></p>
+</div>
+```
+
+⭐️ 설명
+
+- 이 지역 변수의 scope는 지역 변수를 정의한 태그 시작 ~ 끝
 
 
 ### 📌 이미지
