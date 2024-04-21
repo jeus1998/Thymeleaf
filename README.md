@@ -382,8 +382,73 @@ span : 텍스트의 일부를 그룹화하거나 스타일을 적용하기 위�
 - 출력: Hello <b>Spring</b>!
 - "Spring" 이 b 태그로 단어가 굵게 표시된다.
 
+### 📌 SpringEL 표현식 
 
+- Spring EL(Expression Language)은 스프링 프레임워크에서 사용되는 표현 언어, 주로 스프링의 설정 파일, JSP페이지, Thymeleaf 등에서 사용됩니다.
+- 변수, 연산자, 메소드 호출, 속성 접근 등을 지원하며 다양한 유형의 데이터를 다루는데 유용합니다.
 
+⭐️ 예시 설명 
+
+- 시나리오 : 컨트롤러에서 model에 3개의 데이터(Book, List<Book>, Map<String, Book>)를 넣는다.
+
+```java
+@Controller
+@RequestMapping("/books")
+public class BookController {
+    @Data
+    static class Book{
+        private String name;
+        public Book(String name) {
+            this.name = name;
+        }
+    }
+
+    @GetMapping("/book-data")
+    public String getBook(Model model){
+          Book book1 = new Book("comic");
+          Book book2 = new Book("novel");
+
+          List<Book> list = new ArrayList<>();
+          list.add(book1);
+          list.add(book2);
+
+          Map<String, Book> map = new HashMap<>();
+          map.put("book1", book1);
+          map.put("book2", book2);
+
+          model.addAttribute("book", book1);
+          model.addAttribute("books", list);
+          model.addAttribute("map", map);
+
+          return "books";
+    }
+}
+```
+
+- HTML + Thymeleaf로 브라우저에게 보여주기
+
+```html
+<h2>SpringEL 표현식 연습</h2>
+<ul> <!-- Object (Book) -->
+    <li><span th:text="${book.name}"></span></li>
+    <li><span th:text="${book['name']}"></span></li>
+    <li><span th:text="${book.getName()}"></span></li>
+</ul>
+
+<ul> <!-- List<Book> -->
+    <li><span th:text="${books[0].name}"></span></li>
+    <li><span th:text="${books[0]['name']}"></span></li>
+    <li><span th:text="${books[0].getName()}"></span></li>
+</ul>
+
+<ul> <!-- Map<String, Book> -->
+    <li><span th:text="${map['book1'].name}"></span> </li>
+    <li><span th:text="${map['book1']['name']}"></span> </li>
+    <li><span th:text="${map['book2'].getName()}"></span> </li>
+</ul>
+```
+
+- 모두 자바 프로퍼티 getXxx를 사용하고 ['변수이름'], getXxx, .변수이름 다양한 메서드를 지원한다. 
 
 
 ### 📌 이미지
