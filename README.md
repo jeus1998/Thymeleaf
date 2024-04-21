@@ -2,7 +2,7 @@
 # Thymeleaf (SSR) + HTML 
 
 ![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-005F0F?style=flat-square&logo=Thymeleaf&logoColor=white)
-
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white)
 
 ## 뷰 템플릿 엔진 타임리프 공부용 레포지토리 
 
