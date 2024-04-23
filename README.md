@@ -573,13 +573,13 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 - 👉 속성 추가
   - 파일   : ``` <input type="text" class="text" th:attrappend="class=' large'" /> ```   
   - 렌더링 : ``` <input type="text" class="text large" /> ```
-  - 설명   : <b>th:attrappend</br> 속성 값의 뒤에 값을 추가 
+  - 설명   : th:attrappend 속성 값의 뒤에 값을 추가 
   - 파일   : ``` <input type="text" class="text" th:attrprepend="class='large '" /> ```   
   - 렌더링 : ``` <input type="text" class="large text" /> ```
-  - 설명   : <b>th:attrprepend</br> 속성 값의 앞에 값을 추가 
+  - 설명   : th:attrprepend 속성 값의 앞에 값을 추가 
   - 파일   : ``` <input type="text" class="text" th:classappend="large" /> ```     <b>th:classappend</br>
   - 렌더링 : ``` <input type="text" class="text large" /> ```
-  - 설명   : <b>th:classappend</br> class 속성에 자연스럽게 값 추가 
+  - 설명   : th:classappend class 속성에 자연스럽게 값 추가 
 
 
 ### 📌 반복문 each
