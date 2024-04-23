@@ -833,6 +833,12 @@ footer를 불러서 사용하는 html
 - ``` template/fragment/footer :: copy ``` : ```template/fragment/footer.html``` 템플릿에 있는 ```th:fragment="copy"``` 부분을 템플릿 조각으로 사용한다는 의미
 - 부분포함 insert
    - ``` <div th:insert="~{template/fragment/footer :: copy}"></div> ``` : ```th:insert```를 사용하면 현재 태그 ```<div>``` 내부에 추가한다.
+   - 웹 브라우저에 렌더링 된 소스
+   ```html
+   <div><footer>
+      푸터 자리 입니다.
+   </footer></div>
+   ``` 
 
 
 
