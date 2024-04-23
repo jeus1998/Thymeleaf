@@ -536,7 +536,10 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
    -  ```  <li>10 + 2 = <span th:text="10 + 2"></span></li> ```               결과 : 10 + 2 = 12
    -  ```  <li>10 % 2 == 0 = <span th:text="10 % 2 == 0"></span></li> ```     결과 : true
 - 👉 비교 연산
-   - > 
+   - >
+       -  ```  <li>1 > 10 = <span th:text="1 > 10"></span></li> ``` 결과 : 1 > 10 = false
+       -  ```  <li>1 > 10 = <span th:text="1 &gt; 10"></span></li> ``` 결과 : 1 > 10 = false
+       -  ```  <li>1 > 10 = <span th:text="1 gt 10"></span></li> ``` 결과 : 1 > 10 = false
 
 
 
