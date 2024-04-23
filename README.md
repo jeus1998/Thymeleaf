@@ -543,12 +543,12 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 
 ## Thymeleaf 객체 정리 
 
-## 📌 스프링 부트 v 3.0 미만 (기본 객체)
+### 📌 스프링 부트 v 3.0 미만 (기본 객체)
 
 - 기본 제공 객체 : request, response, session, servletContext, locale
 - 사용법 : ${#request}, ${#response}, ${#session}, ${#servletContext}, ${#locale}
 
-## 📌 스프링 부트 v 3.0 이상  (기본 객체)
+### 📌 스프링 부트 v 3.0 이상  (기본 객체)
 
 - 기본 제공 객체 : locale
 - 사용법 : ${#locale}
@@ -562,7 +562,7 @@ added as context variables.
 ```
 - 나머지 객체들은 모델(Model)에 직접 넣어서 사용한다. 
 
-## 📌 Thymeleaf 편의 객체 
+### 📌 Thymeleaf 편의 객체 
 
 - HTTP 요청 파라미터 접근 : param
    - 예) ${param.paramData}
