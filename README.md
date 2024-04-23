@@ -600,6 +600,8 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 
 👉 반복 상태 유지 
 
+![Thymeleaf each Table](https://github.com/jeus1998/Thymeleaf/assets/161576167/6e230378-ce05-46cb-bb96-57fda31023c5)
+
 ```html
 <table border="1">
     <tr>
