@@ -558,7 +558,10 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
    -  null check를 간단하게 수행하는데 사용  ?:
    -  ```<li><span th:text="${data}?: '데이터가 없습니다.'"></span></li>``` 결과 : Spring!
    -  ```<li><span th:text="${nullData}?: '데이터가 없습니다.'"></span></li>``` 결과 : 데이터가 없습니다.
-
+- 👉 No-Operation 
+  -  _ 인 경우 마치 타임리프가 실행되지 않는 것 처럼 동작한다.
+  -  ```<li><span th:text="${data}?: _ "></span></li>``` 결과 : Spring!
+  -  ```<li><span th:text="${nullData}?: _ "></span></li>``` 결과 : 
 
 
 ### 📌 반복문 each
