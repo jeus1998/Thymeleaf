@@ -539,9 +539,15 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
    -  ```  <li>1 > 10 = <span th:text="1 > 10"></span></li> ``` 결과 : 1 > 10 = false
    -  ```  <li>1 > 10 = <span th:text="1 &gt; 10"></span></li> ``` 결과 : 1 > 10 = false
    -  ```  <li>1 > 10 = <span th:text="1 gt 10"></span></li> ``` 결과 : 1 > 10 = false
-   -  ```  <li>1 < 10 = <span th:text="1 < 10"></span></li> ``` 결과 : 1 < 10 = false
-   -  ```  <li>1 > 10 = <span th:text="1 &lt; 10"></span></li> ```  결과 : 1 < 10 = false
-   -  ```  <li>1 > 10 = <span th:text="1 lt 10"></span></li> ```  결과 : 1 < 10 = false
+   -  ```  <li>1 < 10 = <span th:text="1 < 10"></span></li> ``` 결과 : 1 < 10 = true
+   -  ```  <li>1 > 10 = <span th:text="1 &lt; 10"></span></li> ```  결과 : 1 < 10 = true
+   -  ```  <li>1 > 10 = <span th:text="1 lt 10"></span></li> ```  결과 : 1 < 10 = true
+   -  ```  <li>1 >= 10 = <span th:text="1 >= 10"></span></li> ``` 결과 : 1 >= 10 = false
+   -  ```  <li>1 >= 10 = <span th:text="1 ge 10"></span></li> ``` 결과 : 1 >= 10 = false
+   -  ```  <li>1 <= 10 = <span th:text="1 <= 10"></span></li> ``` 결과 : 1 <= 10 = true
+   -  ```  <li>1 <= 10 = <span th:text="1 le 10"></span></li> ``` 결과 : 1 <= 10 = true
+   -  ```  <li>1 == 10 = <span th:text="1 == 10"></span></li> ``` 결과 : 1 == 10 = false
+   -  ```  <li>1 != 10 = <span th:text="1 != 10"></span></li> ``` 결과 : 1 != 10 = true
 
 
 
