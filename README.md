@@ -838,7 +838,28 @@ footer를 불러서 사용하는 html
    <div><footer>
       푸터 자리 입니다.
    </footer></div>
-   ``` 
+   ```
+- 부분포함 replace
+   - ``` <div th:replace="~{template/fragment/footer :: copy}"></div> ``` : ```th:replace```를 사용하면 현재 태그  ```<div>```를 대체한다.
+   - 웹 브라우저에 렌더링 된 소스
+   ```html
+   <footer>
+      푸터 자리 입니다.
+   </footer>
+   ```
+- 부분 포함 단순 표현식
+   - ``` <div th:replace="template/fragment/footer :: copy"></div> ``` : ``` ~{...} ``` 를 사용하는 것이 원칙이지만 템플릿 조각을 사용하는 코드가 단순하면 생략
+- 파라미터 사용
+   - ``` <div th:replace="~{template/fragment/footer :: copyParam ('데이터1', '데이터2')}"></div> ``` : 파라미터를 전달해서 동적으로 조각을 렌더링
+   - 웹 브라우저에 렌더링 된 소스
+   ```html
+    <footer>
+       <p>파라미터 자리 입니다.</p>
+       <p>데이터1</p>
+       <p>데이터2</p>
+    </footer>
+   ```
+   
 
 
 
