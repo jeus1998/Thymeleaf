@@ -551,13 +551,13 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 - 👉 조건식
    -  ```  <li> (10 % 2 == 0)? '짝수':'홀수' = <span th:text="(10 % 2 == 0)? '짝수':'홀수'"></span></li> ``` 결과 : (10 % 2 == 0)? '짝수':'홀수' = 짝수
 - 👉 Elvis 연산자
-   ``` java
+   ```java
      model.addAttribute("nullData", null);
      model.addAttribute("data", "Spring!");
    ```
    -  null check를 간단하게 수행하는데 사용  ?:
-   -  <li><span th:text="${data}?: '데이터가 없습니다.'"></span></li> 결과 : Spring!
-   -  <li><span th:text="${nullData}?: '데이터가 없습니다.'"></span></li> 결과 : 데이터가 없습니다.
+   -  ```<li><span th:text="${data}?: '데이터가 없습니다.'"></span></li>``` 결과 : Spring!
+   -  ```<li><span th:text="${nullData}?: '데이터가 없습니다.'"></span></li>``` 결과 : 데이터가 없습니다.
 
 
 
