@@ -505,8 +505,29 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 ```html
  th:href="@{/basic/items/{itemId}(itemId=${item.id}, query='test')}"
 ```
-
 생성된 링크: http://localhost:8080/basic/items/1?query=test
+
+
+- 👉 모델에서 넘어온 데이터를 바탕으로 url 경로 만드는 예시
+
+```java
+  model.addAttribute("param1", "data1");
+  model.addAttribute("param2", "data2");
+```
+
+```html
+<ul>
+  <!-- /hello -->
+  <li><a th:href="@{/hello}">basic url</a></li>
+  <!-- /hello?param1=data1&param2=data2 -->
+  <li><a th:href="@{/hello(param1=${param1}, param2=${param2})}">hello query param</a></li>
+  <!-- /hello/data1/dat2 -->
+  <li><a th:href="@{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}">path variable</a></li>
+  <!-- /hello/data1?param2=data2 -->
+  <li><a th:href="@{/hello/{param1}(param1=${param1}, param2=${param2})}">path variable + query parameter</a></li>
+</ul>
+```
+
 
 ### 📌 반복문 each
 
