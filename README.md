@@ -563,6 +563,16 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
   -  ```<li><span th:text="${data}?: _ "></span></li>``` 결과 : Spring!
   -  ```<li><span th:text="${nullData}?: _ "></span></li>``` 결과 : 
 
+### 📌 속성 
+
+⭐️ 타임리프는 주로 HTML 태그에 th:* 속성을 지정하는 방식으로 동작한다. th:*로 속성을 적용하면 기존 속성을 대체한다. 기존 속성이 없으면 새로 만든다.
+
+- 👉 속성 설정
+  - 파일   : ``` <input type="text" name="mock" th:name="userA" /> ``` 
+  - 렌더링 : ``` <input type="text" name="userA" /> ``` 
+
+
+
 
 ### 📌 반복문 each
 
