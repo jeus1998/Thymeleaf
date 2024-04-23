@@ -540,4 +540,37 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
     <!-- 사용후 -->
         <span th:text="|Welcome to our application, ${item.id}!|"> </span>
 ```
+
+## Thymeleaf 객체 정리 
+
+## 📌 스프링 부트 v 3.0 미만 (기본 객체)
+
+- 기본 제공 객체 : request, response, session, servletContext, locale
+- 사용법 : ${#request}, ${#response}, ${#session}, ${#servletContext}, ${#locale}
+
+## 📌 스프링 부트 v 3.0 이상  (기본 객체)
+
+- 기본 제공 객체 : locale
+- 사용법 : ${#locale}
+- 스프링 부트 3.0 이상은 locale 객체 말고는 지원을 안한다. 만약 사용하면 아래와 같은 에러가 발생한다.
+```java
+Caused by: java.lang.IllegalArgumentException: The 
+'request','session','servletContext' and 'response' expression utility objects 
+are no longer available by default for template expressions and their use is not 
+recommended. In cases where they are really needed, they should be manually 
+added as context variables.
+```
+- 나머지 객체들은 모델(Model)에 직접 넣어서 사용한다. 
+
+## 📌 Thymeleaf 편의 객체 
+
+- HTTP 요청 파라미터 접근 : param
+   - 예) ${param.paramData}
+- HTTP 세션 접근 : session
+   - 예) ${session.sessionData}
+   - sessionData는 서버에서 넣어준 데이터(session.setAttribute) key 
+- 스프링 빈 접근: @
+   - 예) ${@helloBean.hello('Spring!')}
+   - 빈 이름(helloBean) 으로 접근 hello는 해당 빈의 메서드  
+
   
