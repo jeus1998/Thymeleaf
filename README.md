@@ -580,7 +580,11 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
   - 파일   : ``` <input type="text" class="text" th:classappend="large" /> ```     
   - 렌더링 : ``` <input type="text" class="text large" /> ```
   - 설명   : th:classappend class 속성에 자연스럽게 값 추가 
-
+- 👉 checked 처리
+    - ``` <input type="checkbox" name="active" checked="false" /> ``` HTML에서는  boolean 값과 상관없이 checked 처리
+    - 파일   : ``` <input type="checkbox" name="active" th:checked="false" /> ```
+    - 렌더링 : ```<input type="checkbox" name="active" /> ```
+    - 설명   : th:checked=false면 checked 속성 자체를 제거한다. true면 유지 
 
 ### 📌 반복문 each
 
