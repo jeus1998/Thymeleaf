@@ -700,6 +700,65 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 - ``` <th:block> </th:block> ```
 
 
+### 📌 자바스크립트 인라인 
+
+- 타임리프는 자바스크립트에서 타임리프를 편리하게 사용할 수 있는 자바스크립트 인라인 기능을 제공한다.
+- 사용법 : ``` <script th:inline="javascript"> </script> ```
+
+
+ 👉 사용 전 
+
+```html
+<script>
+
+  var username = "[[${user.username}]]";
+  var age = [[${user.age}]];
+
+  //자바스크립트 내추럴 템플릿
+  var username2 = /*[[${user.username}]]*/ "test username";
+
+  //객체
+  var user = [[${user}]];
+
+</script>
+```
+ 👉 사용 후
+
+ ```html
+ <script th:inline="javascript">
+
+  var username = [[${user.username}]];
+  var age = [[${user.age}]];
+
+  //자바스크립트 내추럴 템플릿
+  var username2 = /*[[${user.username}]]*/ "test username";
+
+  //객체
+
+  var user = [[${user}]];
+</script>
+ ```
+
+- 텍스트 렌더링 
+   - 인라인 사용 전  var username = userA  개발자가 기대하는 것은 "userA" 자바스크립트 오류 발생 
+   - 인라인 사용 후  var username = "userA"
+   - 인라인 사용 후 렌더링 결과를 보면 문자 타입인 경우 "를 포함해 준다. 추가로 자바스크립트에서 문제가 될 수 있는 문자가 포함되어 있으면 이스케이프 처리도 해준다.
+ 
+- 자바스크립트 내추럴 템플릿
+   -  타임리프는 HTML 파일을 직접 열어도 동작하는 내추럴 템플릿 기능을 제공한다. 자바스크립트 인라인 기능을 사용하면 주석을 활용해서 이 기능을 사용할 수 있다.
+   -  인라인 사용 전 var username2 = /*userA*/ "test username";
+   -  인라인 사용 후 var username2 = "userA";
+ 
+ - 객체
+    - 타임리프의 자바스크립트 인라인 기능을 사용하면 객체를 JSON으로 자동으로 변환해준다.
+    - var user = [[${user}]];
+    - 인라인 사용 전 var user = BasicController.User(username=userA, age=10);
+    - 인라인 사용 후 var user = {"username":"userA","age":10};
+    - 인라인 사용 전은 객체의 toString()이 호출된 값이다.
+    - 인라인 사용 후는 객체를 JSON으로 변환해준다.
+
+  
+
 ## Thymeleaf 객체 정리 
 
 ### 📌 스프링 부트 v 3.0 미만 (기본 객체)
