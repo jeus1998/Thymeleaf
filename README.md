@@ -775,6 +775,63 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 이런 부분을 코드를 복사해서 사용한다면 변경시 여러 페이지를 다 수정해야 하므로 상당히 비효율적이다. 
 이런 문제를 해결하기 위해서 템플릿 조각과 레이아웃 기능을 지원한다. 
 
+👉 footer.html
+
+여러 페이지에서 다 똑같은 영역을 사용한다면 footer를 활용한다. 다른 타임리프 파알이 해당 파일(footer.html)을 불러서 사용하는 용도 
+th:fragment 가 있는 태그는 다른곳에 포함되는 코드 조각으로 이해하면 된다.
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<footer th:fragment="copy">
+  푸터 자리 입니다.
+</footer>
+
+<footer th:fragment="copyParam (param1, param2)">
+  <p>파라미터 자리 입니다.</p>
+  <p th:text="${param1}"></p>
+  <p th:text="${param2}"></p>
+</footer>
+
+</body>
+</html>
+```
+
+👉 fragmentMain.html
+
+footer를 불러서 사용하는 html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>부분 포함</h1>
+
+<h2>부분 포함 insert</h2>
+<div th:insert="~{template/fragment/footer :: copy}"></div>
+
+<h2>부분 포함 replace</h2>
+<div th:replace="~{template/fragment/footer :: copy}"></div>
+
+<h2>부분 포함 단순 표현식</h2>
+<div th:replace="template/fragment/footer :: copy"></div>
+
+<h1>파라미터 사용</h1>
+<div th:replace="~{template/fragment/footer :: copyParam ('데이터1', '데이터2')}"></div>
+
+</body>
+</html>
+```
+
+- ``` template/fragment/footer :: copy ``` : template/fragment/footer.html 템플릿에 있는 th:fragment="copy" 부분을 템플릿 조각으로 사용한다는 의미
+
 
 
 
