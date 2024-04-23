@@ -641,7 +641,6 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
    - first, last : 처음, 마지막 여부 (boolean) count를 기준으로 한다. 
    - current : 현재 객체 
 
-
 ### 📌 switch case
 
 ```html
@@ -652,6 +651,17 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
     <p th:case="*">알 수 없는 사용자입니다.</p>
 </div>
 ```
+
+### 📌 조건식 if, unless(if의 반대)
+
+```html
+ <span th:text="'미성년자'" th:if="${user.age lt 20}"></span>
+ <span th:text="'미성년자'" th:unless="${user.age ge 20}"></span>
+```
+
+- 만약 user age <  20 '미성년자'가 출력
+- 만약 user age >= 20  렌더링 x 
+
 
 ### 📌 리터럴, 리터럴 대체 
 
