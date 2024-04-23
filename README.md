@@ -777,7 +777,7 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 
 👉 footer.html
 
-여러 페이지에서 다 똑같은 영역을 사용한다면 footer를 활용한다. 다른 타임리프 파알이 해당 파일(footer.html)을 불러서 사용하는 용도 
+여러 페이지에서 다 똑같은 영역을 사용한다면 footer를 활용한다. 다른 타임리프 파일이 해당 파일(footer.html)을 불러서 사용하는 용도 
 th:fragment 가 있는 태그는 다른곳에 포함되는 코드 조각으로 이해하면 된다.
 
 ```html
@@ -830,8 +830,9 @@ footer를 불러서 사용하는 html
 </html>
 ```
 
-- ``` template/fragment/footer :: copy ``` : template/fragment/footer.html 템플릿에 있는 th:fragment="copy" 부분을 템플릿 조각으로 사용한다는 의미
-
+- ``` template/fragment/footer :: copy ``` : ```template/fragment/footer.html``` 템플릿에 있는 ```th:fragment="copy"``` 부분을 템플릿 조각으로 사용한다는 의미
+- 부분포함 insert
+   - ``` <div th:insert="~{template/fragment/footer :: copy}"></div> ``` : ```th:insert```를 사용하면 현재 태그 ```<div>``` 내부에 추가한다.
 
 
 
