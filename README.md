@@ -573,4 +573,13 @@ added as context variables.
    - 예) ${@helloBean.hello('Spring!')}
    - 빈 이름(helloBean) 으로 접근 hello는 해당 빈의 메서드  
 
-  
+### 📌 Thymeleaf 유틸리티 객체  
+
+- 타임리프는 문자, 숫자, 날짜, URI등을 편리하게 다루는 다양한 유틸리티 객체들을 제공한다.
+- 타임리프 공식 홈페이지에서 필요할 때 찾아서 사용한다.
+
+➡ 타임리프 유틸리티 객체 https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-utility-objects
+
+➡ 타임리프 유틸리티 객체 예시 https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-b-expressionutility-objects
+
+
