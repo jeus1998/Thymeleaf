@@ -757,6 +757,18 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
     - 인라인 사용 전은 객체의 toString()이 호출된 값이다.
     - 인라인 사용 후는 객체를 JSON으로 변환해준다.
 
+ 👉 인라인 반복문 
+
+ ```HTML
+<script th:inline="javascript">
+
+  [# th:each="user, stat : ${users}"]
+  var user[[${stat.count}]] = [[${user}]];
+  [/]
+
+</script>
+ ```
+
   
 
 ## Thymeleaf 객체 정리 
