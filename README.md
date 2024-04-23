@@ -551,7 +551,7 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 </div>
 ```
 
-### 📌 리터럴 
+### 📌 리터럴, 리터럴 대체 
 
 - 타임리프에서 문자 리터럴은 항상 작은 따옴표로 감싸야 한다.
    - ``` <span th:text="'hello'"> ```
@@ -560,14 +560,16 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 - 예시
    - 오류 ``` <span th:text="hello world!"> ```  중간에 공백이 있어서 오류 
    - 수정 ``` <span th:text="'hello world!'"> ```
-- 타임리프에서 문자와 표현식 등은 분리되어 있기 때문에 더해서 사용해야 된다.
+- 리터럴 대체 |...|
+- 👉 정리
 
 ```html
-    <!-- 사용전 -->
-        <span th:text="'Welcome to our application, ' + ${item.id} + '!'"> </span> <br>
-    <!-- 사용후 -->
-        <span th:text="|Welcome to our application, ${item.id}!|"> </span>
+  <li>'hello' + ' world!' = <span th:text="'hello' + ' world!'"></span></li>
+  <li>'hello world!' = <span th:text="'hello world!'"></span></li>
+  <li>'hello ' + ${data} = <span th:text="'hello ' + ${data}"></span></li>
+  <li>리터럴 대체 |hello ${data}| = <span th:text="|hello ${data}|"></span></li>
 ```
+
 
 ## Thymeleaf 객체 정리 
 
