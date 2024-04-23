@@ -588,14 +588,57 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 
 ### 📌 반복문 each
 
+👉 반복 기능 
+
 ```html
 <tr th:each="item : ${items}">
-<!-- <td> 각 행의 열에 해당하는 데이터를 정의 -->
 <td th:text="${item.id}"></td>
 <td th:text="${item.itemName}"></td>
 <td th:text="${item.price}"></td>
 </tr>
 ```
+
+👉 반복 상태 유지 
+
+```html
+<table border="1">
+    <tr>
+        <th>count</th>
+        <th>index</th>
+        <th>username</th>
+        <th>age</th>
+        <th>size</th>
+        <th>even</th>
+        <th>odd</th>
+        <th>first</th>
+        <th>last</th>
+        <th>current</th>
+    </tr>
+    <tr th:each="user, userStat : ${users}">
+        <td th:text="${userStat.count}">username</td>
+        <td th:text="${userStat.index}">index</td>
+        <td th:text="${user.username}">username</td>
+        <td th:text="${user.age}">0</td>
+        <td th:text="${userStat.size}">0</td>
+        <td th:text="${userStat.even}">true</td>
+        <td th:text="${userStat.odd}">true</td>
+        <td th:text="${userStat.first}">true</td>
+        <td th:text="${userStat.last}">true</td>
+        <td th:text="${userStat.current}">true</td>
+    </tr>
+</table>
+```
+
+- 반복의 두번째 파라미터를 설정해서 반복의 상태를 확인 할 수 있습니다.
+- 두번째 파라미터는 생략이 가능한데, 생략하면 지정한 변수명 + Stat가 됩니다.
+- 반복 상태 유지 기능
+   - index : 0부터 시작하는 값
+   - count : 1부터 시작하는 값
+   - size : 전체 사이즈
+   - even , odd : 짝수 홀수 여부 (boolean) count를 기준으로 한다. 
+   - first, last : 처음, 마지막 여부 (boolean) count를 기준으로 한다. 
+   - current : 현재 객체 
+
 
 ### 📌 switch case
 
