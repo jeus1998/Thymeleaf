@@ -1,4 +1,4 @@
-package Thymeleaf.study;
+package Thymeleaf.study.practice0;
 
 import lombok.Getter;
 import lombok.Setter;
