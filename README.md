@@ -905,7 +905,7 @@ added as context variables.
 
 - project를 다운받고 localhost:8181로 접속을 하면 테슬라 차 판매라는 링크가 있습니다. 
 - 들어가서 보면 타임리프를 활용한 상품 등록, 상품 수정, 상품 리스트 볼 수 있습니다. 
-- README에 설명 안된 문법들 th:object, select, checkbox, radio ...
+- README에 설명 안된 문법들 th:object, th:field, select, checkbox, radio, ${#ids.prev('...')}
 
 Back-End Package ➡ Thymleaf/study/pratice1/*
 
