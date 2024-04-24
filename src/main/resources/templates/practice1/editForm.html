@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 수정</title>
+</head>
+<body>
+    <h2>상품 수정 페이지</h2>
+    <form th:action th:object="${car}" method="post">
+        <div>
+            <label for="price">가격</label>
+            <input type="text" th:field="*{price}">
+        </div>
+        <div>
+            <label for="quantity">수량</label>
+            <input type="text" th:field="*{quantity}">
+        </div>
+        <div>
+            <label for="salesMan">판매자</label>
+            <input type="text" th:field="*{salesMan}">
+        </div>
+
+        <hr class="my-4">
+
+        <div>
+        <div>차량 종류</div>
+        <div th:each="type : ${carTypes}">
+            <input type="radio" th:field="*{carType}" th:value="${type}">
+            <label th:for="${#ids.prev('carType')}" th:text="${type.description}"></label>
+        </div>
+        </div>
+
+        <div>
+        <div>배송 가능 지역</div>
+        <div th:each="region : ${regions}">
+            <input type="checkbox" th:field="*{regions}" th:id="${regionStat.count}" th:value="${region.key}">
+            <label th:for="${regionStat.count}" th:text="${region.value}"></label>
+        </div>
+        </div>
+
+        <div>
+        <div>판매 여부 </div>
+        <div>
+            <input type="checkbox" th:field="*{open}">
+            <label th:for="open" th:text="'판매 오픈'"></label>
+        </div>
+        </div>
+
+        <div>
+            <div>배송 방식</div>
+            <select th:field="${car.deliveryWay}">
+                <option value="">==배송 방식 선택==</option>
+                <option th:each="deliveryWay : ${deliveryWays}" th:value="${deliveryWay.way}" th:text="${deliveryWay.displayName}"></option>
+            </select>
+        </div>
+
+        <hr class="my-4">
+
+        <div>
+            <button type="submit">상품 수정</button>
+        </div>
+        <div>
+            <button th:onclick="|location.href='@{/tesla/{id}(id=${car.id})}'|" type="button">취소</button>
+        </div>
+        <div>
+            <button th:onclick="|location.href='@{/tesla}'|" type="button">상품 목록</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

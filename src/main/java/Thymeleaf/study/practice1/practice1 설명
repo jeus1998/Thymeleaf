@@ -1,0 +1,40 @@
+Thymeleaf 연습
+
+테슬라 자동차 판매업체
+
+Domain - Tesla
+
+id  Long
+가격 Long
+수량 Integer
+판매원 String
+
+차 판매 여부 Boolean
+차 판매 지역 List<String>
+
+차 종류
+CarType - Enum
+- * 테슬라 모델 3
+  * 테슬라 모델 S
+  * 테슬라 모델 X
+  * 테슬라 모델 Y
+
+
+배달 방법
+DeliveryWay Class
+-  * Truck : 트럭 배송
+   * AirPlane : 비행기 배송
+   * Ship : 배 배송
+
+TeslaRepository
+
+-  * save
+   * update
+   * findAll
+   * findById
+
+
+
+
+
+

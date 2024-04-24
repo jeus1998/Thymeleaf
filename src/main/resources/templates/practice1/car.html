@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 상세</title>
+</head>
+<body>
+    <h1>어서오세요!</h1>
+    <h2 th:if="${param.success}" th:text="'등록 완료!!'"></h2>
+    <h2 th:if="${param.edit}" th:text="'수정 완료'"></h2>
+
+    <div>
+        <label for="price">가격</label>
+        <input type="text" th:field="${car.price}" readonly>
+    </div>
+    <div>
+        <label for="quantity">수량</label>
+        <input type="text" th:field="${car.quantity}" readonly>
+    </div>
+    <div>
+        <label for="salesMan">판매자</label>
+        <input type="text" th:field="${car.salesMan}" readonly>
+    </div>
+
+    <hr class="my-4">
+
+    <div>
+    <div>차량 종류</div>
+    <div th:each="type : ${carTypes}">
+        <input type="radio" th:field="${car.carType}" th:value="${type}" disabled>
+        <label th:for="${#ids.prev('carType')}" th:text="${type.description}"></label>
+    </div>
+    </div>
+
+    <div>
+    <div>배송 가능 지역</div>
+    <div th:each="region : ${regions}">
+        <input type="checkbox" th:field="${car.regions}" th:id="${regionStat.count}" th:value="${region.key}" disabled>
+        <label th:for="${regionStat.count}" th:text="${region.value}"></label>
+    </div>
+    </div>
+
+    <div>
+    <div>판매 여부 </div>
+    <div>
+        <input type="checkbox" th:field="${car.open}" disabled>
+        <label th:for="open" th:text="'판매 오픈'"></label>
+    </div>
+    </div>
+
+    <div>
+        <div>배송 방식</div>
+        <select th:field="${car.deliveryWay}" disabled>
+            <option value="">==배송 방식 선택==</option>
+            <option th:each="deliveryWay : ${deliveryWays}" th:value="${deliveryWay.way}" th:text="${deliveryWay.displayName}"></option>
+        </select>
+    </div>
+
+
+    <hr class="my-4">
+
+    <div>
+        <button th:onclick="|location.href='@{/tesla/edit/{id}(id=${car.id})}'|" type="button">상품 수정</button>
+    </div>
+    <div>
+        <button th:onclick="|location.href='/tesla'|" type="button">상품 목록</button>
+    </div>
+
+</body>
+</html>
