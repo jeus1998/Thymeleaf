@@ -908,6 +908,7 @@ added as context variables.
 - README에 설명 안된 문법들 th:object, select, checkbox, radio ...
 
 Back-End Package ➡ Thymleaf/study/pratice1/*
+
 SSR      Package ➡ resources/templates/practice1/* 
 
     
