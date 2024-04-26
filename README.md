@@ -729,7 +729,8 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
                    class="form-control" placeholder="이름을 입력하세요">
 ```
 
-지금 이 코드를 보면 th:class가 if - else 문으로 복잡하게 사용되고 있다. 이걸 th:classappend를 활용해서 간단하게 변경이 가능하다.
+지금 이 코드를 보면 th:class가 if - else 문으로 itemName key가 있으면 "form-control field-error" 없으면 "form-control" 
+th:classappend를 활용해서 간단하게 변경이 가능하다.
 
 ```html
           <input type="text" id="itemName" th:field="*{itemName}"
@@ -738,6 +739,7 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 ```
 
 이렇게 하면 errros(Map)에 itemName key가 있으면 class에 field-error를 추가해서 class = "form-control field-error"와 같이 동일하게 동작한다. 
+없으면 기존 class인 form-control
 
 
 ### 📌 자바스크립트 인라인 
