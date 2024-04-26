@@ -459,6 +459,27 @@ public class BookController {
 ```
 
 - 모두 자바 프로퍼티 getXxx를 사용하고 ['변수이름'], getXxx, .변수이름 다양한 메서드를 지원한다.
+  
+### 📌 Safe Navigation Operator
+
+```HTML
+ <div th:if="${errors.containsKey('globalError')}">
+```
+
+여기서 errors는 서버에서 Model에 넘겨준 Map 데이터이다. 만약 errors가 null 이라면 어떻게 될까?
+호출하는 순간 NullPointerException이 발생한다.
+그럼 어떻게 해야할까? 
+
+```html
+<div th:if="${errors?.containsKey('globalError')}">
+```
+
+errors?.은 errors가 null 일때 NullPointerException이 발생하는 대신, null을 반환하는 문법이다.
+th:if에서 null은 실패로 처리되므로 오류 메세지가 출력되지 않는다.
+이것은 스프링의 SpringEL이 제공하는 문법이다. 
+
+참고 : https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#expressionsoperator-safe-navigation
+
 
 ### 📌 지역 변수 
 
