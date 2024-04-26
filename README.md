@@ -743,6 +743,40 @@ th:classappend를 활용해서 간단하게 변경이 가능하다.
 
 없으면 기존 class인 form-control
 
+### 📌 검증(validation) 
+
+스프링 프레임워크에서 제공하는 BidingResult를 활용한 검증 
+
+```java import org.springframework.validation.BindingResult; ```
+
+서버에서는 BindingResult에 2가지 error 타입을 반환한다. 
+- ObjectError : 특정 필드의 에러가 아닌 복합적인 에러
+- FieldError : 특정 필드의 에러
+
+ObjectError(Global error) 출력 
+
+```html
+<div th:if="${#fields.hasGlobalErrors()}">
+     <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">전체 오류 메시지</p>
+</div>
+``` 
+${#fiends.hasGlobalErrors()} error가 있으면 동작 
+Global error는 0 ~ n개이다. th:each 반복문을 활용해서 defaultMessage를 출력한다.
+
+FieldError 출력 
+
+```html
+<label for="itemName" th:text="#{label.item.itemName}">상품명</label>
+     <input type="text" id="itemName" th:field="*{itemName}"
+            th:errorclass="field-error" class="form-control" placeholder="이름을 입력하세요">
+<div class="field-error" th:errors="*{itemName}"> 상품명 오류</div>
+```
+
+보통 해당 에러가 있으면 if - else 를 통해서 th:appendclass 하여 "field-error form-control" 이렇게 하는데 
+th:errorclass를 통해서 로직을 엄청 간단하게 줄였다.  
+
+th:errors = BindingRessult 에서 넘겨준 Object에 맞춰서 해당 field에 error가 있다면 BindingResult에 넘겨준 defaultMessage를 출력한다. 
+
 
 ### 📌 자바스크립트 인라인 
 
