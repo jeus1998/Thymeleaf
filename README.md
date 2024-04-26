@@ -721,6 +721,25 @@ URL 링크 표현식을 사용하면 서블릿 컨텍스트를 자동으로 포�
 - ``` <th:block> </th:block> ```
 
 
+### 📌 th:classappend
+
+```html
+          <input type="text" id="itemName" th:field="*{itemName}"
+                   th:class="${errors?.containsKey('itemName')} ? 'form-control field-error' : 'form-control'"
+                   class="form-control" placeholder="이름을 입력하세요">
+```
+
+지금 이 코드를 보면 th:class가 if - else 문으로 복잡하게 사용되고 있다. 이걸 th:classappend를 활용해서 간단하게 변경이 가능하다.
+
+```html
+          <input type="text" id="itemName" th:field="*{itemName}"
+                   th:classappend="${errors?.containsKey('itemName')} ? 'field-error' : _"
+                   class="form-control" placeholder="이름을 입력하세요">
+```
+
+이렇게 하면 errros(Map)에 itemName key가 있으면 class에 field-error를 추가해서 class = "form-control field-error"와 같이 동일하게 동작한다. 
+
+
 ### 📌 자바스크립트 인라인 
 
 - 타임리프는 자바스크립트에서 타임리프를 편리하게 사용할 수 있는 자바스크립트 인라인 기능을 제공한다.
